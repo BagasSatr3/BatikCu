@@ -62,6 +62,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
     Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
   });
+Route::group(['prefix' => 'profile'], function () {
+    Route::get('/', [\App\Http\Controllers\ProfileController::class,'index']);
+    //Route::resource('userimage', ProfileController::class,'uploadimage');
+});
 
 Auth::routes();
 

@@ -99,15 +99,15 @@
     </div>
     <div class="container ">
         <div class="col mt-2 mb-2">
-            <div class="row title-home2 rounded">
+            <div class="row title-home3 rounded">
                 @foreach($itempromo as $promo)
               <div class="col-md-4">
                 <div class="card mb-4 mt-4 rounded border border-0 ">
                     <a href="{{ URL::to('item/produk/'.$promo->produk->slug_produk) }}">
                         @if($promo->produk->foto != null)
-                        <img src="{{\Storage::url($promo->produk->foto) }}" alt="{{ $promo->produk->nama_produk }}" class="card-img-top">
+                        <img src="{{\Storage::url($promo->produk->foto) }}" alt="{{ $promo->produk->nama_produk }}" class="card-img title-home3">
                         @else
-                        <img src="{{asset('images/bag.jpg') }}" alt="{{ $promo->produk->nama_produk }}" class="card-img-top">
+                        <img src="{{asset('images/bag.jpg') }}" alt="{{ $promo->produk->nama_produk }}" class="card-img title-home3">
                         @endif
                       </a>
                   <div class="card-body title-home3 rounded">
