@@ -76,7 +76,7 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id,
         // kalo ga ada error page not found 404
         $data = array('title' => 'Form Edit Kategori',
                     'itemkategori' => $itemkategori);
@@ -97,7 +97,7 @@ class KategoriController extends Controller
             'slug_kategori' => 'required',
             'deskripsi_kategori' => 'required',
         ]);
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id,
         // kalo ga ada error page not found 404
         $slug = \Str::slug($request->slug_kategori);//slug kita gunakan nanti pas buka produk per kategori
         // kita validasi dulu, biar tidak ada slug yang sama
@@ -122,7 +122,7 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id,
         // kalo ga ada error page not found 404
         if (($itemkategori->produk) > 0) {
             // dicek dulu, kalo ada produk di dalam kategori maka proses hapus dihentikan

@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style2.css">
+<body class="">
 
 {{-- <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
   <div class="container">
@@ -32,7 +34,7 @@
     </div>
   </div>
 </nav> --> --}}
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+{{-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content ">
         <div class="modal-header">
@@ -63,12 +65,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
 
-<nav class="">
+{{-- <nav class="">
   <ul class="navbar-nav">
-    {{-- <img src="/images/logoPutih.png" height="img-fluid" class=""/> --}}
+
     <li class="nav-item dropdown">
       <a class="dropdown dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
@@ -77,12 +79,11 @@
         <a class="dropdown-item" href="{{  URL::to('profile') }}">Profile</a>
         <a class="dropdown-item" href="{{ URL::to('kategori') }}">Kategori</a>
         <a class="dropdown-item" href="{{ URL::to('about') }}">About</a>
-        <a class="btn btn-primary dropdown-item" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
         <div class="dropdown-divider"></div>
         @if(Auth::guest())
           <a class="dropdown-item" href="/login">Login</a>
           @else
-          {{-- {{ Auth::user()->name }} --}}
+          {{ Auth::user()->name }}
           <a href="#" class="dropdown-item" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">Sign Out</a>
        @endif
@@ -90,10 +91,8 @@
     </li>
   </ul>
 
-</nav>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-  @csrf
-</form>
+</nav> --}}
+
 
 <!-- Button trigger modal -->
 
@@ -103,61 +102,47 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 
-{{-- <link rel="stylesheet" href="css/style2.css">
-<nav class="nav">
-        <div class="container">
-            <div class="logo">
-                <a href="#">Your Logo</a>
-            </div>
-            <div id="mainListDiv" class="main_list">
-                <ul class="navlinks">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
-        </div>
-    </nav>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="" style="">
+        <h2 class="text-center" style="color: #DDA15E;">
+            @if (Auth::guest())
+                <h2 class="text-center" style="color: #DDA15E;">Guest</h2>
+                @else
+                {{ Auth::user()->name }}
+            @endif
+          </h2>
+        @if (Auth::check())
+            @if (Auth::user()->role == 'admin')
+            <a href="/admin">Services</a>
+            @elseif (Auth::user()->role == 'member')
+            <a href="/profile">Profile</a>
+            @else
+            <h2>naan</h2>
+            @endif
+        @endif
 
-    <section class="home">
-    </section>
-    <div style="height: 1000px">
-        <!-- just to make scrolling effect possible -->
-			<h2 class="myH2">What is this ?</h2>
-			<p class="myP">This is a responsive fixed navbar animated on scroll</p>
-			<p class="myP">I took inspiration from  ABDO STEIF (<a href="https://codepen.io/abdosteif/pen/bRoyMb?editors=1100">https://codepen.io/abdosteif/pen/bRoyMb?editors=1100</a>)
-			and Dicson <a href="https://codepen.io/dicson/pen/waKPgQ">(https://codepen.io/dicson/pen/waKPgQ)</a></p>
-			<p class="myP">I HOPE YOU FIND THIS USEFULL</p>
-			<p class="myP">Albi</p>
-				<p class="myP">
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+        @if(Auth::guest())
+              <a class="" href="/login">Login</a>
+              @else
 
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam
-			</p>
+              <a href="#" class="" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">Sign Out</a>
+           @endif
     </div>
 
-<!-- Jquery needed -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+  </div>
 
-<!-- Function used to shrink nav bar removing paddings and adding black background -->
-    <script>
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
-                console.log("OK");
-            } else {
-                $('.nav').removeClass('affix');
-            }
-        });
-    </script> --}}
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+  </div>
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+  </form>
+
+</body>
