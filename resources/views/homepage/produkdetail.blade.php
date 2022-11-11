@@ -29,10 +29,20 @@
     </div>
     <!-- deskripsi produk -->
     <div class="col col-lg-4 col-md-4">
+    <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header card-red" style="background-color: #3F4B3B;">
+          Deskripsi
+        </div>
+        <div class="card-body card-yellow" style="background-color: #FAEDCD;">
+          {{ $itemproduk->deskripsi_produk }}
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-body card-yellow">
+            <div class="card-body card-yellow" style="background-color: #FAEDCD;">
               @if(count($errors) > 0)
               @foreach($errors->all() as $error)
                   <div class="alert alert-warning">{{ $error }}</div>
@@ -65,7 +75,7 @@
               <form action="{{ route('wishlist.store') }}" method="post">
                 @csrf
                 <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
-                <button type="submit" class="btn btn-sm btn-outline-secondary">
+                <button type="submit" class="btn btn-sm btn-outline-secondary" style="background-color: #3F4B3B;font-family: Poppins;">
                 @if(isset($itemwishlist) && $itemwishlist)
                 <i class="fas fa-heart"></i> Tambah ke wishlist
                 @else
@@ -77,22 +87,24 @@
           </div>
         </div>
       </div>
+    </div>
+     </div>
       <div class="row mt-4">
         <div class="col">
           <div class="card">
-            <div class="card-body card-yellow">
+            <div class="card-body card-yellow" style="background-color: #FAEDCD;">
             <form action="{{ route('cartdetail.store') }}" method="POST">
               @csrf
               <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
-              <button class="btn btn-block btn-primary" type="submit">
+              <button class="btn btn-block btn-primary" type="submit"style="background-color: #606C38; font-family: Poppins;">
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
             </form>
-              <button class="btn btn-block btn-danger mt-4">
+              <button class="btn btn-block btn-danger mt-4"style="background-color: #606C38; font-family: Poppins;">
               <i class="fa fa-shopping-basket"></i> Beli Sekarang
               </button>
             </div>
-            <div class="card-footer card-yellow">
+            <div class="card-footer card-yellow" style="background-color: #FAEDCD;">
               <div class="row mt-4">
                 <div class="col text-center">
                   <i class="fa fa-truck-moving"></i> 
@@ -109,18 +121,6 @@
               </div>            
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col">
-      <div class="card">
-        <div class="card-header card-red">
-          Deskripsi
-        </div>
-        <div class="card-body card-yellow">
-          {{ $itemproduk->deskripsi_produk }}
         </div>
       </div>
     </div>
