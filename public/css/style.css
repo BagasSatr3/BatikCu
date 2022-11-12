@@ -148,7 +148,7 @@ nav{
   color:#fff;
 }
 .text-center .btn{
-  background-color: #eecd80;
+  background-color: #FAEDCD;
 }
 /* .btn-primary{
   background-color: #5F1A1F;
@@ -231,4 +231,87 @@ height: 270px;
 .text-home2-button {
     background: #414B3B;
 
+}
+
+.btn-homepage {
+  color: #DDA15E;
+}
+
+a.text-shop {
+  color: #DDA15E;
+}
+
+.btn-shop {
+  background: #FAEDCD;
+  padding: 5px 38px 5px 38px;
+  
+}
+
+.btn-shop h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+}
+
+.btn-sign {
+  background: #FAEDCD;
+  padding: 5px 38px 5px 38px;
+  font-size: 16pt;
+}
+
+input.reg, input.reg::placeholder {
+  background: #414B3B;
+  color: #DDA15E;
+  border-radius: 30px;
+}
+
+input.reg::placeholder {
+  text-align: left;
+  font-weight: bold;
+}
+
+.regis {
+  background: #414B3B;
+  color: #DDA15E;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 5px 38px 5px 38px;
+  font-size: 16pt;
+}
+
+.logg {
+  background: #414B3B;
+  color: #DDA15E;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 5px 38px 5px 38px;
+  font-size: 16pt;
+}
+
+.log-gin {
+  background:  #FAEDCD;
+  color: #DDA15E;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 5px 38px 5px 38px;
+  font-size: 16pt;
+}
+
+input.login, input.login::placeholder, input.login:focus {
+  background:  #FAEDCD;
+  color: #DDA15E;
+  border-radius: 30px;
+}
+
+input.login::placeholder {
+  text-align: left;
+  font-weight: bold;
+}
+
+.rem {
+  color:#FAEDCD;
+}
+
+.forgot {
+  color: #DDA15E;
 }
