@@ -30,7 +30,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('produk',\App\Http\Controllers\ProdukController::class);
     Route::resource('customer',\App\Http\Controllers\CustomerController::class);
     Route::resource('transaksi',\App\Http\Controllers\TransaksiController::class);
-    Route::get('profil',[\App\Http\Controllers\UserController::class,'index']);
     Route::get('setting',[\App\Http\Controllers\UserController::class,'setting']);
     Route::get('laporan',[\App\Http\Controllers\LaporanController::class,'index']);
     Route::get('proseslaporan',[\App\Http\Controllers\LaporanController::class,'proses']);
@@ -62,10 +61,14 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
     Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
   });
-Route::group(['prefix' => 'profile'], function () {
-    Route::get('/', [\App\Http\Controllers\ProfileController::class,'index']);
+Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
+    Route::get('/', [\App\Http\Controllers\UserController::class,'index']);
+    Route::post('uploadFoto', [\App\Http\Controllers\UserController::class,'store']);
+    Route::get('edit', [\App\Http\Controllers\UserController::class,'edit']);
     //Route::resource('userimage', ProfileController::class,'uploadimage');
 });
+
+
 
 Auth::routes();
 
