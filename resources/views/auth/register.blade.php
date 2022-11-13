@@ -170,15 +170,19 @@
                   <input type="text" name="name" id="name" class="form-control reg " placeholder="Masukkan nama">
                 </div>
                 <div class="form-group mb-4">
-
                   <input type="text" name="email" id="email" class="form-control reg" placeholder="Masukkan email">
                 </div>
-                <div class="form-group mb-4">
 
+                <div class="form-group mb-4">
+                    <input type="text" name="alamat" id="alamat" class="form-control reg" placeholder="Masukkan Alamat">
+                </div>
+                <div class="form-group mb-4">
+                    <input type="text" name="phone" id="phone" class="form-control reg" placeholder="Masukkan Nomor Telepon">
+                </div>
+                <div class="form-group mb-4">
                   <input type="password" name="password" id="password" class="form-control reg" placeholder="Masukkan password">
                 </div>
                 <div class="form-group mb-4">
-
                   <input type="password" name="password_confirmation" id="password_confirmation" class="form-control reg" placeholder="Masukkan password">
                 </div>
                 <div class="form-group d-flex flex-column align-items-center">

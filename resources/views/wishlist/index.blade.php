@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.template')
 @section('content')
 <div class="container-fluid">
   <div class="row">
@@ -46,7 +46,7 @@
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">
                         Hapus
-                      </button>                    
+                      </button>
                     </form>
                   </td>
                 </tr>

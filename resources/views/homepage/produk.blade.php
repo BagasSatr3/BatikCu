@@ -6,7 +6,7 @@
         <div class="col text-center mt-5 mb-4">
             <div class="mt-4 ">
                 <center>
-                    <div class="container" >
+                    <div class="container">
                       <div class="row mt-5" >
                         <div class="col" >
                           <div id="carousel" class="carousel slide" data-ride="carousel"  >
@@ -45,36 +45,44 @@
 </div>
 
 
-<div class="container">
+<div class="container title-home3 rounded mb-3">
   <div class="row mt-4">
       <div class="col col-lg-9 col-md-9 mb-2">
         @if(isset($itemkategori))
-        <h3>{{ $itemkategori->nama_kategori }}</h3>
+        <h3 class="ml-5 mt-3" style="color: #414B3B; font-weight: bold;">{{ $itemkategori->nama_kategori }}</h3>
         @else
-        <h3>Semua Kategori</h3>
+        <h3 class="ml-5 mt-3" style="color: #414B3B; font-weight: bold;">Semua Kategori</h3>
         @endif
-        <div class="row mt-4">
+        <div class="row mt-4 m-4">
           @foreach($itemproduk as $produk)
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm ">
               <a href="{{ URL::to('item/produk/'.$produk->slug_produk) }}">
                 @if($produk->foto != null)
-                <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_produk }}" class="card-img-top">
+                <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_produk }}" class="img-fluid img-thumbnail">
                 @else
-                <img src="{{ asset('images/bag.jpg') }}" alt="{{ $produk->nama_produk }}" class="card-img-top">
+                <img src="{{ asset('images/bag.jpg') }}" alt="{{ $produk->nama_produk }}" class="img-fluid img-thumbnail">
                 @endif
               </a>
-              <div class="card-body">
-                <a href="{{ URL::to('item/produk/'.$produk->slug_produk ) }}" class="text-decoration-none">
-                  <p class="card-text">
+              <div class="card-body mt-2" >
+                <a href="{{ URL::to('item/produk/'.$produk->slug_produk ) }}" class="text-decoration-none" style="color: #414B3B; font-weight: bold;">
+                  <p class="card-text fs-5 ml-2">
                     {{ $produk->nama_produk }}
                   </p>
-                </a>
-                <div class="row mt-4">
+                </a><br>
+                <div class="row mt-2">
                   <div class="col">
-                    <button class="btn btn-light">
-                      <i class="far fa-heart"></i>
-                    </button>
+                    <form action="{{ route('wishlist.store') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="produk_id" value={{ $produk->id }}>
+                        <button type="submit" class="btn " style="font-family: Poppins;">
+                        @if(isset($itemwishlist) && $itemwishlist)
+                        <i class="fas fa-heart"></i>
+                        @else
+                        <i class="far fa-heart"></i>
+                        @endif
+                        </button>
+                      </form>
                   </div>
                   <div class="col-auto">
                     <p>

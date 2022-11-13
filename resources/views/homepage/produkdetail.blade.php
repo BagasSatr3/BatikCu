@@ -107,18 +107,18 @@
             <div class="card-footer card-yellow" style="background-color: #FAEDCD;">
               <div class="row mt-4">
                 <div class="col text-center">
-                  <i class="fa fa-truck-moving"></i> 
+                  <i class="fa fa-truck-moving"></i>
                   <p>Pengiriman Cepat</p>
                 </div>
                 <div class="col text-center">
-                  <i class="fa fa-calendar-week"></i> 
+                  <i class="fa fa-calendar-week"></i>
                   <p>Garansi 7 hari</p>
                 </div>
                 <div class="col text-center">
-                  <i class="fa fa-money-bill"></i> 
+                  <i class="fa fa-money-bill"></i>
                   <p>Pembayaran Aman</p>
                 </div>
-              </div>            
+              </div>
             </div>
           </div>
         </div>

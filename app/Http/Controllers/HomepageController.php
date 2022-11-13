@@ -31,7 +31,7 @@ class HomepageController extends Controller
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(6)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
         $itemslide = Slideshow::get();
-        $data = array('title' => 'Homepage',
+        $data = array('title' => 'Items',
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
@@ -77,7 +77,7 @@ class HomepageController extends Controller
                         'itemproduk' => $itemproduk,
                         'listkategori' => $listkategori,
                         'itemkategori' => $itemkategori);
-            return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);            
+            return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);
         } else {
             return abort('404');
         }
@@ -124,7 +124,7 @@ class HomepageController extends Controller
                 $data = array('title' => $itemproduk->nama_produk,
                             'itemproduk' => $itemproduk);
             }
-            return view('homepage.produkdetail', $data);            
+            return view('homepage.produkdetail', $data);
         } else {
             // kalo produk ga ada, jadinya tampil halaman tidak ditemukan (error 404)
             return abort('404');

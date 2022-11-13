@@ -146,7 +146,7 @@
         </div>
     </div>
 </div>
-<div class="title-home1">
+<div class="title-home1 mb-3">
     <div class="row">
         <div class="container">
             <div class="col text-center mt-5 mb-4">
@@ -155,7 +155,7 @@
             <div class="row">
                 <div class="col text-right ">
                     <h3 class="mt-4" style="color: #FAEDCD">Email :</h3>
-                    
+
                 </div>
                 <div class="col text-left ">
                     <button class="title-home2 mt-4 border-0 rounded-pill" disabled>
@@ -168,7 +168,7 @@
                     <h3 class="mt-4" style="color: #FAEDCD">Help Center :</h3>
                 </div>
                 <div class="col text-left ">
-                    
+
                     <button class="title-home2 mt-4 border-0 rounded-pill" disabled>
                         <h3 class="" style="color: #DDA15E">0851-0067-1761</h3>
                     </button>
@@ -184,7 +184,6 @@
                     </button>
                 </div>
                 </div>
-
             </div>
         </div>
     </div>

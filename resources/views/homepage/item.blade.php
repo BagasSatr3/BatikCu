@@ -4,7 +4,41 @@
 <div class="title-home1">
     <div class="row">
         <div class="col text-center mt-5 mb-4">
-            <div class="mt-4 ">
+            <div class="row">
+                <div class="col">
+                  <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      @foreach($itemslide as $index => $slide )
+                      @if($index == 0)
+                      <div class="carousel-item active">
+                          <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ $slide->caption_title }}</h5>
+                            <p>{{ $slide->caption_content }}</p>
+                          </div>
+                      </div>
+                      @else
+                        <div class="carousel-item active">
+                            <img src="{{ asset('images/photo1.png') }}" class="carosel" alt="..." style="max-width: 100%; height: auto;" >
+                        </div>
+                        <div class="carousel-item">
+                          <img src="{{ asset('images/photo2.png') }}" class="d-block w-150 h-250" alt="..." style="max-width: 100%; height: auto;"  >
+                        </div>
+                      @endif
+                      @endforeach
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {{-- <div class="mt-4 ">
                 <center>
                     <div class="container" >
                       <div class="row mt-5" >
@@ -35,7 +69,7 @@
                       </div>
                     </div>
                     </center>
-            </div>
+            </div> --}}
             <img src="/images/logo.svg" height="150px" class=""/>
             <div class="mt-4">
                 <h3 class="text-white text-bold">BATIK CULTURE - Sharing the Batik of your life</h3>
@@ -63,7 +97,7 @@
                 </a>
                 <div class="card-body title-home3 row">
                         <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
-                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center">
+                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center text-decoration-none">
                                 <h6 class="card-text m-2" style="color: #FAEDCD;">{{ $kategori->nama_kategori }}</h6>
                               </a>
                         </button>
@@ -85,17 +119,10 @@
 </div>
 <div class="title-home1 ">
     <div class="row">
-        <img src="{{ asset('images/bag.jpg') }}" alt="" class="col-12" style="">
-        <div class="container">
-            <div class="col text-center mb-4">
-                <button type="button" class="rounded-pill border border-0 mt-4 text-center">
-                    <a href="#" class="m-4" style="color: #414B3B;">SHOP NOW</a>
-                </button>
-            </div>
-        </div>
+        <img src="{{ asset('images/bag.jpg') }}" alt="" class="col-12 mb-4" style="">
     </div>
     <div class="mt-4">
-        <h3 class="text-white text-center">BATIK CULTURE - Sharing the Batik of your life</h3>
+        <h3 class="text-white text-center">Promo</h3>
     </div>
     <div class="container ">
         <div class="col mt-2 mb-2">

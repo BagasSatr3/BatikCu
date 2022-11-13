@@ -43,7 +43,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
     Route::get('loadprodukasync/{id}',[\App\Http\Controllers\ProdukController::class,'loadasync']);
-    Route::resource('wishlist',\App\Http\Controllers\WishlistController::class);
 });
 
 Route::group(['middleware' => 'auth'], function() {
@@ -52,19 +51,20 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('cartdetail', \App\Http\Controllers\CartDetailController::class);
     Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
     Route::get('checkout',[\App\Http\Controllers\CartController::class,'checkout']);
-  });
+});
 
-  Route::group(['prefix' => 'item'], function() {
+Route::group(['prefix' => 'item'], function() {
     Route::get('/', [\App\Http\Controllers\HomepageController::class,'item']);
     Route::get('/kategori', [\App\Http\Controllers\HomepageController::class,'kategori']);
     Route::get('/kategori/{slug}', [\App\Http\Controllers\HomepageController::class,'kategoribyslug']);
     Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
     Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
-  });
-Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
-    Route::get('/', [\App\Http\Controllers\UserController::class,'index']);
+});
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
+    Route::get('/profile', [\App\Http\Controllers\UserController::class,'index']);
     Route::post('uploadFoto', [\App\Http\Controllers\UserController::class,'store']);
     Route::get('edit', [\App\Http\Controllers\UserController::class,'edit']);
+    Route::resource('wishlist',\App\Http\Controllers\WishlistController::class);
     //Route::resource('userimage', ProfileController::class,'uploadimage');
 });
 
@@ -74,4 +74,10 @@ Auth::routes();
 
 Route::get('/home', function() {
     return redirect('/admin');
+});
+Route::get('/user', function() {
+    return redirect('/user/profile');
+});
+Route::get('/item/kategori', function() {
+    return redirect('/item');
 });

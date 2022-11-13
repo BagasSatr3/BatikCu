@@ -101,7 +101,7 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> --}}
 <script src="js/scripts.js"></script>
 
 <div id="mySidebar" class="sidebar">
@@ -118,14 +118,15 @@
             @if (Auth::user()->role == 'admin')
             <a href="/admin">Services</a>
             @elseif (Auth::user()->role == 'member')
-            <a href="/profile">Profile</a>
+            <a href="/user/profile">Profile</a>
+            <a href="/user/wishlist">Wishlist</a>
             @else
             <h2>naan</h2>
             @endif
         @endif
 
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="/item">Product</a>
+        <a href="/#contact">Contact</a>
         @if(Auth::guest())
               <a class="" href="/login">Login</a>
               @else
@@ -138,8 +139,14 @@
   </div>
 
   <div id="main">
-    <button class="openbtn" onclick="openNav()">&#9776;</button>
-
+  <div class="container-fluid">
+    <div class="">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <a href="/" class="ml-2 " >
+            <img src="/images/logoPutih.png" height="50px" class=""/>
+        </a>
+    </div>
+  </div>
   </div>
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf

@@ -2,14 +2,14 @@
 @section('content')
 <div class="container">
   <!-- kategori produk -->
-  <div class="row mt-4">
+  <div class="row mt-4 title-home3 rounded">
     <div class="col col-md-12 col-sm-12 mb-4">
       <h2 class="text-center">Kategori Produk</h2>
     </div>
     @foreach($itemkategori as $kategori)
     <!-- kategori pertama -->
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
+    <div class="col-md-4 ">
+      <div class="card mb-4 shadow-sm mt-4" >
         <a href="{{ URL::to('kategori/'.$kategori->slug_kategori) }}">
           @if($kategori->foto != null)
           <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
@@ -64,5 +64,7 @@
       </div>
     </div>
     @endforeach
+</div>
+</div>
 </div>
 @endsection
