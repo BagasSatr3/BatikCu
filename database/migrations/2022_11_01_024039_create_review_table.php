@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('title');
             $table->integer('user_id')->unsigned();
-            $table->string('slug_produk');
-            $table->text('deskripsi_produk');
-            $table->string('foto')->nullable();
+            $table->integer('produk_id')->unsigned();
+            $table->text('deskripsi_review');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('produk_id')->references('id')->on('produk');
             $table->timestamps();

@@ -70,7 +70,7 @@
                     </div>
                     </center>
             </div> --}}
-            <img src="/images/logo.svg" height="150px" class=""/>
+            <img src="/images/logoPutih.png" height="500px" class=""/>
             <div class="mt-4">
                 <h3 class="text-white text-bold">BATIK CULTURE - Sharing the Batik of your life</h3>
             </div>

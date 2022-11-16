@@ -11,11 +11,16 @@ class Review extends Model
     protected $table = 'review';
     protected $fillable = [
         'user_id',
-        'kode_produk',
-        'nama_produk',
-        'deskripsi_produk',
-        'satuan',
-        'harga',
-        'status',
+        'produk_id',
+        'title',
+        'deskripsi_review',
     ];
+
+    public function user() {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
+
+    public function produk () {
+        return $this->belongsTo('App\Models\Produk', 'produk_id');
+    }
 }

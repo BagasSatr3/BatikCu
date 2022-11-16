@@ -7,6 +7,7 @@ use App\Models\Produk;
 use App\Models\Kategori;
 use App\Models\Image;
 use App\Models\ProdukImage;
+use App\Models\Slideshow;
 
 class ProdukController extends Controller
 {
@@ -18,6 +19,7 @@ class ProdukController extends Controller
     public function index(Request $request)
     {
         $itemproduk = Produk::orderBy('created_at', 'desc')->paginate(20);
+
         $data = array('title' => 'Produk',
                     'itemproduk' => $itemproduk);
         return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
@@ -73,8 +75,12 @@ class ProdukController extends Controller
     public function show($id)
     {
         $itemproduk = Produk::findOrFail($id);
+        $itemslide = Slideshow::get();
         $data = array('title' => 'Foto Produk',
-                'itemproduk' => $itemproduk);
+                'itemproduk' => $itemproduk,
+                'itemslide' => $itemslide,);
+
+
         return view('produk.show', $data);
     }
 
@@ -138,7 +144,7 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        $itemproduk = Produk::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemproduk = Produk::findOrFail($id);//cari berdasarkan id = $id,
         // kalo ga ada error page not found 404
         if ($itemproduk->delete()) {
             return back()->with('success', 'Data berhasil dihapus');
@@ -199,10 +205,12 @@ class ProdukController extends Controller
     }
     public function loadasync($id) {
         $itemproduk = Produk::findOrFail($id);
+        $itemslide = Slideshow::get();
         $respon = [
             'status' => 'success',
             'msg' => 'Data ditemukan',
-            'itemproduk' => $itemproduk
+            'itemproduk' => $itemproduk,
+            'itemslide' => $itemslide,
         ];
         return response()->json($respon, 200);
     }

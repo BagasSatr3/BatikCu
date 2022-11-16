@@ -9,9 +9,13 @@
             <div class="">
                 <h5 class="text-white"><strong> BATIK CULTURE - Sharing the Batik of your life </strong></h5>
             </div>
+            @if (Auth::guest())
             <div class="mt-4 ">
-                <button type="button" class="btn rounded-pill btn-homepage"><strong> CREATE YOUR FREE ACCOUNT </strong></button>
+                <button type="button" class="btn rounded-pill btn-homepage">
+                    <a href="/register" class="text-decoration-none" style="color: black"><strong> CREATE YOUR FREE ACCOUNT </strong></a>
+                </button>
             </div>
+            @endif
         </div>
     </div>
 </div>
@@ -26,9 +30,6 @@
                 <div class="mt-4">
                    <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
                 </div>
-                <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
-                    <a href="/item" class="m-4" style="color:#FAEDCD;" >SHOP NOW</a>
-                </button>
             </div>
         </div>
     </div>
@@ -43,7 +44,7 @@
                     <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
                     <center>
                         <button type="button" class="btn-shop rounded-pill border border-0 mt-4">
-                            <a href="#" class="text-shop">
+                            <a href="/item" class="text-shop text-decoration-none">
                                 <h3 class=""><strong> SHOP NOW </strong></h3>
                             </a>
                         </button>
@@ -150,7 +151,7 @@
     <div class="row">
         <div class="container">
             <div class="col text-center mt-5 mb-4">
-                <h3 class="" style="color: #FAEDCD">Contact Us</h3>
+                <h3 class="" id="contact" style="color: #FAEDCD">Contact Us</h3>
             </div>
             <div class="row">
                 <div class="col text-right ">

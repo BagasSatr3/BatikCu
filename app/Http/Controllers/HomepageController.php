@@ -72,11 +72,13 @@ class HomepageController extends Controller
         $itemkategori = Kategori::where('slug_kategori', $slug)
                                 ->where('status', 'publish')
                                 ->first();
+        $itemslide = Slideshow::get();
         if ($itemkategori) {
             $data = array('title' => $itemkategori->nama_kategori,
                         'itemproduk' => $itemproduk,
                         'listkategori' => $listkategori,
-                        'itemkategori' => $itemkategori);
+                        'itemkategori' => $itemkategori,
+                        'itemslide' => $itemslide,);
             return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);
         } else {
             return abort('404');
@@ -103,6 +105,7 @@ class HomepageController extends Controller
                     // 'itemproduk' => $itemproduk,
                     'itemproduk' => $product_search,
                     'listkategori' => $listkategori,
+                    'itemslide' => $itemslide,
                 );
         return view('homepage.produk', $data)->with('no', ($request->input('page') - 1) * 18);
     }
@@ -111,6 +114,8 @@ class HomepageController extends Controller
         $itemproduk = Produk::where('slug_produk', $id)
                             ->where('status', 'publish')
                             ->first();
+        $itemslide = Slideshow::get();
+
         if ($itemproduk) {
             if (Auth::user()) {//cek kalo user login
                 $itemuser = Auth::user();

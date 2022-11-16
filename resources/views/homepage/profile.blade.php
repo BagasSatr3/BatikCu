@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
-<div class="container">
-    <div class="row mt-5  mb-5 "><br>
+<div class="container-md">
+    <div class="row mt-5 "><br>
         <div class="col-md-4 title-home3">
             <div class="mt-3" style="width: 100%; height: auto;">
                 <img src="{{ asset('images/bag.jpg') }}" alt="" class="img-fluid rounded" >
@@ -24,25 +24,33 @@
             </div>
         </div>
         <div class="col-md-8 col-6 title-home2">
-            <div class="container">
+            <div class="container mb-4">
                 <div class="mt-4">
                     <h2 style="color: #DDA15E;">Profile</h2>
                 </div>
-                <div class="mt-4">
-                    <label for="exampleFormControlInput1" class="form-label ml-2 " style="color: #414B3B;">Username</label>
-                    <p class="ml-4">{{ Auth::user()->name}}</p>
+                <div class="mt-4 row">
+                    <label for="nama" class="form-label ml-2 " style="color: #414B3B;">Username</label>
+                    <button disabled="disabled" style="background: #CCD5AE; " class="col rounded-pill border-0">
+                        <p class="fs-4" style="">{{ Auth::user()->name}}</p>
+                    </button>
                 </div>
                 <div class="mt-2">
-                    <label for="exampleFormControlInput1" class="form-label ml-2" style="color: #414B3B;">Email address</label>
-                    <p class="ml-4">{{ Auth::user()->email}}</p>
+                    <label for="email" class="form-label ml-2" style="color: #414B3B;">Email address</label>
+                    <button disabled="disabled" style="background: #CCD5AE; " class="col rounded-pill border-0">
+                        <p class="fs-4" style="">{{ Auth::user()->email}}</p>
+                    </button>
                 </div>
                 <div class="mt-2">
-                    <label for="exampleFormControlInput1" class="form-label ml-2" style="color: #414B3B;">Alamat</label>
-                    <p class="ml-4">{{ Auth::user()->alamat}}</p>
+                    <label for="alamat" class="form-label ml-2" style="color: #414B3B;">Alamat</label>
+                    <button disabled="disabled" style="background: #CCD5AE; " class="col rounded-pill border-0">
+                        <p class="fs-4" style="">{{ Auth::user()->alamat}}</p>
+                    </button>
                 </div>
                 <div class="mt-2">
-                    <label for="exampleFormControlInput1" class="form-label ml-2" style="color: #3d413a;">Phone</label>
-                    <p class="ml-4">{{ Auth::user()->phone}}</p>
+                    <label for="phone" class="form-label ml-2" style="color: #3d413a;">Phone</label>
+                    <button disabled="disabled" style="background: #CCD5AE; " class="col rounded-pill border-0">
+                        <p class="fs-4" style="">{{ Auth::user()->phone}}</p>
+                    </button>
                 </div>
                 {{-- <div class="mt-2 mb-3">
                     <button class="title-home3 rounded-pill border-0" >meh

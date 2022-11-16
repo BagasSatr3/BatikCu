@@ -140,11 +140,15 @@
 
   <div id="main">
   <div class="container-fluid">
-    <div class="">
+    <div class="nav">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
         <a href="/" class="ml-2 " >
             <img src="/images/logoPutih.png" height="50px" class=""/>
         </a>
+        <form action="/item/produk" method="GET" class="form-search d-flex flex-row-reverse">
+            <input type="search" class="search-data" placeholder="Search" name="q">
+            <button type="submit" class="fa fa-search"></button>
+          </form>
     </div>
   </div>
   </div>

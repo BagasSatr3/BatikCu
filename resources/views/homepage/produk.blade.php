@@ -6,37 +6,43 @@
         <div class="col text-center mt-5 mb-4">
             <div class="mt-4 ">
                 <center>
-                    <div class="container">
-                      <div class="row mt-5" >
-                        <div class="col" >
-                          <div id="carousel" class="carousel slide" data-ride="carousel"  >
-                            <div class="carousel-inner" style=>
+                    <div class="row">
+                        <div class="col">
+                          <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              @foreach($itemslide as $index => $slide )
+                              @if($index == 0)
                               <div class="carousel-item active">
-                                  <img src="{{ asset('images/photo1.png') }}" class="carosel" alt="..." style="max-width: 100%; height: auto;" >
+                                  <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+                                  <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{ $slide->caption_title }}</h5>
+                                    <p>{{ $slide->caption_content }}</p>
+                                  </div>
                               </div>
-                              <div class="carousel-item">
-                                <img src="{{ asset('images/photo2.png') }}" class="d-block w-150 h-250" alt="..." style="max-width: 100%; height: auto;"  >
-                              </div>
-
-                              <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                              <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                              </a>
-
+                              @else
+                                <div class="carousel-item active">
+                                    <img src="{{ asset('images/photo1.png') }}" class="carosel" alt="..." style="max-width: 100%; height: auto;" >
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="{{ asset('images/photo2.png') }}" class="d-block w-150 h-250" alt="..." style="max-width: 100%; height: auto;"  >
+                                </div>
+                              @endif
+                              @endforeach
                             </div>
-
-
+                            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
                           </div>
                         </div>
                       </div>
-                    </div>
                     </center>
             </div>
-            <img src="/images/logo.svg" height="150px" class=""/>
+            <img src="/images/logoPutih.png" height="500px" class=""/>
             <div class="mt-4">
                 <h3 class="text-white text-bold">BATIK CULTURE - Sharing the Batik of your life</h3>
             </div>

@@ -20,8 +20,6 @@ Route::get('/kontak', [\App\Http\Controllers\HomepageController::class,'kontak']
 //Route::get('/produk', [\App\Http\Controllers\HomepageController::class,'produk']);
 //Route::get('/produk/{id}', [\App\Http\Controllers\HomepageController::class,'produkdetail']);
 
-Route::get('admin/login', [\App\Http\Controllers\AdminAuthControllerController::class,'getLogin'])->name('admin.login');
-Route::post('admin/login', [\App\Http\Controllers\AdminAuthControllerController::class,'postLogin']);
 
 //dashboard admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function() {
@@ -68,7 +66,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     //Route::resource('userimage', ProfileController::class,'uploadimage');
 });
 
-
+Route::resource('review',\App\Http\Controllers\ReviewController::class);
 
 Auth::routes();
 
