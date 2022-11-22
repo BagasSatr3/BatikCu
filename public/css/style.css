@@ -315,3 +315,11 @@ input.login::placeholder {
 .forgot {
   color: #DDA15E;
 }
+
+.search-data {
+    color: rgb(31, 30, 30);
+    font-size: 17px;
+    border: none;
+    font-weight: 500;
+    background: none;
+}

@@ -9,7 +9,8 @@ class UserController extends Controller
 {
     public function index() {
         $itemprofile = User::latest()->paginate(5);
-        $data = array('title' => 'Profile');
+        $data = array('title' => 'Profile',
+                    'itemprofile' => $itemprofile);
         return view('homepage.profile', $data);
     }
 

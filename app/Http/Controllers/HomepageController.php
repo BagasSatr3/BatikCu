@@ -8,6 +8,7 @@ use App\Models\Kategori;
 use App\Models\Slideshow;
 use App\Models\ProdukPromo;
 use App\Models\Wishlist;
+use App\Models\Order;
 use Auth;
 
 class HomepageController extends Controller
@@ -87,7 +88,7 @@ class HomepageController extends Controller
 
     public function produk(Request $request) {
         $search = $request->query('q');
-
+        $itemslide = Slideshow::get();
         $itemproduk = Produk::orderBy('nama_produk', 'desc')
                             ->where('status', 'publish')
                             ->paginate(18);
@@ -135,4 +136,40 @@ class HomepageController extends Controller
             return abort('404');
         }
     }
+
+    public function orders(Request $request)
+    {
+        $itemuser = $request->user();
+            // kalo member maka menampilkan cart punyanya sendiri
+            $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
+                            $q->where('status_cart', 'checkout');
+                            $q->where('user_id', $itemuser->id);
+                        })
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(20);
+
+        $data = array('title' => 'Data Transaksi',
+                    'itemorder' => $itemorder,
+                    'itemuser' => $itemuser);
+        return view('homepage.order', $data)->with('no', ($request->input('page', 1) - 1) * 20);
+    }
+
+    // public function showOrder(Request $request, $id)
+    // {
+
+    //     $itemuser = $request->user();
+
+    //         $itemorder = Order::where('id', $id)
+    //                         ->whereHas('cart', function($q) use ($itemuser) {
+    //                             $q->where('user_id', $itemuser->id);
+    //                         })->first();
+    //         if ($itemorder) {
+    //             $data = array('title' => 'Detail Transaksi',
+    //                         'itemorder' => $itemorder);
+    //             return view('homepage.orderDetail', $data)->with('no', 1);
+    //         } else {
+    //             return abort('404');
+    //         }
+    //     }
+
 }

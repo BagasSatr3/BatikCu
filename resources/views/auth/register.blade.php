@@ -134,7 +134,7 @@
         </div>
         <div class="mt-4 text-center mb-5">
           <button class="btn-sign rounded-pill  border-0 title-home1">
-            <a href="{{ route('register') }}" class="m-2" style="color: #DDA15E;"><strong> Sign In </strong></a>
+            <a href="{{ route('login') }}" class="m-2" style="color: #DDA15E;"><strong> Sign In </strong></a>
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CustomerController extends Controller
 {
@@ -11,10 +12,12 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = array('title' => 'Data Customer');
-        return view('customer.index', $data);
+        $itemprofile = User::latest()->paginate(5);
+        $data = array('title' => 'Data Customer',
+                    'itemprofile' => $itemprofile);
+        return view('customer.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
     }
 
     /**
@@ -57,7 +60,9 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $data = array('title' => 'Form Edit Customer');
+        $itemprofile = User::findOrFail($id);
+        $data = array('title' => 'Form Edit Customer',
+                    'itemprofile' => $itemprofile);
         return view('customer.edit', $data);
     }
 

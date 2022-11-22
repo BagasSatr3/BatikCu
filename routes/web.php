@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('cartdetail', \App\Http\Controllers\CartDetailController::class);
     Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
     Route::get('checkout',[\App\Http\Controllers\CartController::class,'checkout']);
+    Route::resource('transaksiu',\App\Http\Controllers\TransaksiuController::class);
 });
 
 Route::group(['prefix' => 'item'], function() {
@@ -63,6 +64,8 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::post('uploadFoto', [\App\Http\Controllers\UserController::class,'store']);
     Route::get('edit', [\App\Http\Controllers\UserController::class,'edit']);
     Route::resource('wishlist',\App\Http\Controllers\WishlistController::class);
+    Route::get('order',[\App\Http\Controllers\HomepageController::class,'orders']);
+    //Route::resource('orders',\App\Http\Controllers\HomepageController::class);
     //Route::resource('userimage', ProfileController::class,'uploadimage');
 });
 

@@ -21,12 +21,12 @@ class Role
     {
         if (in_array($request->user()->role, $Roles)) {
             return $next($request);
-        } 
+        }
 
         if (Auth::user()->role == 'admin') {
             return redirect('/admin');
         } elseif (Auth::user()->role == 'member') {
-            return redirect('/');
+            return redirect('/item');
         }
     }
 }

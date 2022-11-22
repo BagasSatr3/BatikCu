@@ -3,7 +3,7 @@
     <!-- Add icons to the links using the .nav-icon class
           with font-awesome or any other icon font library -->
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/admin" class="nav-link">
         <i class="nav-icon fas fa-th"></i>
         <p>
           Dashboard
@@ -70,6 +70,15 @@
           <i class="right fas fa-angle-left"></i>
         </p>
       </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{ route('customer.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Customer</p>
+          </a>
+        </li>
+      </ul>
+    </li>
       <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-cogs"></i>
@@ -87,15 +96,7 @@
         </li>
       </ul>
     </li>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ route('customer.index') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Customer</p>
-          </a>
-        </li>
-      </ul>
-    </li>
+
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-list"></i>
@@ -113,13 +114,13 @@
         </li>
       </ul>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a href="{{ URL::to('admin/profil') }}" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
         <p>
           Profil
         </p>
-      </a>
+      </a> --}}
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link" onclick="event.preventDefault();

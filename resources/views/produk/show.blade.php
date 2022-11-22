@@ -90,11 +90,11 @@
                 {{ method_field('delete') }}
                 <button type="submit" class="btn btn-sm btn-danger mb-2">
                   Hapus
-                </button>                    
+                </button>
               </form>
             </div>
             @endforeach
-            
+
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ use App\Models\Cart;
 use App\Models\AlamatPengiriman;
 use App\Models\Order;
 
-class TransaksiController extends Controller
+class TransaksiuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +17,6 @@ class TransaksiController extends Controller
     public function index(Request $request)
     {
         $itemuser = $request->user();
-        if ($itemuser->role == 'admin') {
-            // kalo admin maka menampilkan semua cart
-            $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
-                            $q->where('status_cart', 'checkout');
-                        })
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(20);
-        } else {
             // kalo member maka menampilkan cart punyanya sendiri
             $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
                             $q->where('status_cart', 'checkout');
@@ -32,11 +24,11 @@ class TransaksiController extends Controller
                         })
                         ->orderBy('created_at', 'desc')
                         ->paginate(20);
-        }
+
         $data = array('title' => 'Data Transaksi',
                     'itemorder' => $itemorder,
                     'itemuser' => $itemuser);
-        return view('transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
+        return view('transaksiu.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
     }
 
     /**
@@ -79,7 +71,7 @@ class TransaksiController extends Controller
                 $itemorder = Order::create($inputanorder);//simpan order
                 // update status cart
                 $itemcart->update(['status_cart' => 'checkout']);
-                return redirect()->route('transaksi.index')->with('success', 'Order berhasil disimpan');
+                return redirect()->route('transaksiu.index')->with('success', 'Order berhasil disimpan');
             } else {
                 return back()->with('error', 'Alamat pengiriman belum diisi');
             }
@@ -102,7 +94,7 @@ class TransaksiController extends Controller
             $itemorder = Order::findOrFail($id);
             $data = array('title' => 'Detail Transaksi',
                         'itemorder' => $itemorder);
-            return view('transaksi.show', $data)->with('no', 1);
+            return view('transaksiu.show', $data)->with('no', 1);
         } else {
             $itemorder = Order::where('id', $id)
                             ->whereHas('cart', function($q) use ($itemuser) {
@@ -111,7 +103,7 @@ class TransaksiController extends Controller
             if ($itemorder) {
                 $data = array('title' => 'Detail Transaksi',
                             'itemorder' => $itemorder);
-                return view('transaksi.show', $data)->with('no', 1);
+                return view('transaksiu.show', $data)->with('no', 1);
             } else {
                 return abort('404');
             }
@@ -131,7 +123,7 @@ class TransaksiController extends Controller
             $itemorder = Order::findOrFail($id);
             $data = array('title' => 'Form Edit Transaksi',
                         'itemorder' => $itemorder);
-            return view('transaksi.edit', $data)->with('no', 1);
+            return view('transaksiu.edit', $data)->with('no', 1);
         } else {
             return abort('404');//kalo bukan admin maka akan tampil error halaman tidak ditemukan
         }

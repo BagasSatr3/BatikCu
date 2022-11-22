@@ -15,52 +15,63 @@
           </div>
         </div>
         <div class="card-body">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>
-                  Nama
-                </td>
-                <td>
-                  Amin
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Email
-                </td>
-                <td>
-                  amin@gmail.com
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  No Tlp
-                </td>
-                <td>
-                  Alamat
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Status
-                </td>
-                <td>
-                  <form action="#" class="form-inline">
-                    <div class="form-group mr-2">
-                      <select name="status" id="status" class="form-control">
-                        <option value="aktif">Aktif</option>
-                        <option value="nonaktif">Non Aktif</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Update</button>
-                    </div>
-                  </form>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          Nama
+                        </td>
+                        <td>
+                          {{ $itemprofile->name }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Email
+                        </td>
+                        <td>
+                          {{ $itemprofile->email }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          No Tlp
+                        </td>
+                        <td>
+                            {{ $itemprofile->phone }}
+                        </td>
+                        <td>
+                          Alamat
+                        </td>
+                        <td>
+                            {{ $itemprofile->alamat }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Status
+                        </td>
+                        <td>
+                            {{ $itemprofile->status }}
+                        </td>
+                        <td>
+                          <form action="#" class="form-inline">
+                            <div class="form-group mr-2">
+                              <select name="status" id="status" class="form-control">
+                                <option value="aktif">Aktif</option>
+                                <option value="nonaktif">Non Aktif</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                          </form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@
       </div>
     </div>
     <!-- deskripsi produk -->
-    
+
     <div class="col col-lg-4 col-md-4">
     <div class="row mt-4">
     <div class="col">
@@ -71,7 +71,7 @@
           {{ $itemproduk->deskripsi_produk }}
         </div>
               <!-- cek apakah ada promo -->
-              
+
               <form action="{{ route('wishlist.store') }}" method="post">
                 @csrf
                 <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
@@ -100,25 +100,6 @@
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
             </form>
-              <button class="btn btn-block btn-danger mt-4"style="background-color: #606C38; font-family: Poppins;">
-              <i class="fa fa-shopping-basket"></i> Beli Sekarang
-              </button>
-            </div>
-            <div class="card-footer card-yellow" style="background-color: #FAEDCD;">
-              <div class="row mt-4">
-                <div class="col text-center">
-                  <i class="fa fa-truck-moving"></i>
-                  <p>Pengiriman Cepat</p>
-                </div>
-                <div class="col text-center">
-                  <i class="fa fa-calendar-week"></i>
-                  <p>Garansi 7 hari</p>
-                </div>
-                <div class="col text-center">
-                  <i class="fa fa-money-bill"></i>
-                  <p>Pembayaran Aman</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -159,8 +159,10 @@
 
                 </div>
                 <div class="col text-left ">
-                    <button class="title-home2 mt-4 border-0 rounded-pill" disabled>
-                        <h3 class="" style="color: #DDA15E">batikcu@gmail.com</h3>
+                    <button class="title-home2 mt-4 border-0 rounded-pill">
+                        <a href="mailto:sehatkuy.web@gmail.com" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                            <h3 class="" style="color: #DDA15E">batikcu@gmail.com</h3>
+                        </a>
                     </button>
                 </div>
             </div>
@@ -169,9 +171,10 @@
                     <h3 class="mt-4" style="color: #FAEDCD">Help Center :</h3>
                 </div>
                 <div class="col text-left ">
-
-                    <button class="title-home2 mt-4 border-0 rounded-pill" disabled>
-                        <h3 class="" style="color: #DDA15E">0851-0067-1761</h3>
+                    <button class="title-home2 mt-4 border-0 rounded-pill">
+                        <a href="https://wa.me/+6289697132466" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                            <h3 class="" style="color: #DDA15E">0896-9713-2466</h3>
+                        </a>
                     </button>
                 </div>
 
@@ -180,8 +183,10 @@
                     <h3 class="mt-4" style="color: #FAEDCD">Our Office :</h3>
                 </div>
                 <div class="col text-left ">
-                     <button class="title-home2 mt-4 border-0 rounded-pill" disabled>
-                        <h3 class="" style="color: #DDA15E">Jl. Teluk Pacitan, Malang. Jawa Timur.</h3>
+                    <button class="title-home2 mt-4 border-0 rounded-pill">
+                        <a href="https://maps.app.goo.gl/Q4dnb1Rz4QQm4be68" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                           <h3 class="" style="color: #DDA15E">Jl. Teluk Pacitan, Malang. Jawa Timur.</h3>
+                        </a>
                     </button>
                 </div>
                 </div>

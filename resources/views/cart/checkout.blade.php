@@ -97,7 +97,7 @@
                       <td>
                         <a href="{{ route('alamatpengiriman.index') }}" class="btn btn-success btn-sm">
                           Ubah Alamat
-                        </a>                        
+                        </a>
                       </td>
                     </tr>
                   @endif
@@ -148,10 +148,17 @@
           </table>
         </div>
         <div class="card-footer">
-          <form action="{{ route('transaksi.store') }}" method="post">
-            @csrf()
-            <button type="submit" class="btn btn-danger btn-block">Buat Pesanan</button>
-          </form>
+            @if (Auth::user()->role == 'admin')
+            <form action="{{ route('transaksi.store') }}" method="post">
+              @csrf()
+              <button type="submit" class="btn btn-danger btn-block">Buat Pesanan</button>
+            </form>
+            @else
+            <form action="{{ route('transaksiu.store') }}" method="post">
+              @csrf()
+              <button type="submit" class="btn btn-danger btn-block">Buat Pesanan</button>
+            </form>
+            @endif
         </div>
       </div>
     </div>
