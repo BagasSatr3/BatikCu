@@ -28,18 +28,11 @@
       </div>
     </div>
     <!-- deskripsi produk -->
+    
     <div class="col col-lg-4 col-md-4">
     <div class="row mt-4">
     <div class="col">
-      <div class="card">
-        <div class="card-header card-red" style="background-color: #3F4B3B;">
-          Deskripsi
-        </div>
-        <div class="card-body card-yellow" style="background-color: #FAEDCD;">
-          {{ $itemproduk->deskripsi_produk }}
-        </div>
-      </div>
-      <div class="row">
+    <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-body card-yellow" style="background-color: #FAEDCD;">
@@ -60,7 +53,6 @@
               @endif
               <span class="small">{{ $itemproduk->kategori->nama_kategori }}</span>
               <h5>{{ $itemproduk->nama_produk }}</h5>
-              <!-- cek apakah ada promo -->
               @if($itemproduk->promo != null)
               <p>
                 Rp. <del>{{ number_format($itemproduk->promo->harga_awal, 2) }}</del>
@@ -72,6 +64,14 @@
                 Rp. {{ number_format($itemproduk->harga, 2) }}
               </p>
               @endif
+              <div class="card-header card-red" style="background-color: #3F4B3B;">
+          Deskripsi
+        </div>
+    <div class="card-body card-yellow" style="background-color: #FAEDCD;">
+          {{ $itemproduk->deskripsi_produk }}
+        </div>
+              <!-- cek apakah ada promo -->
+              
               <form action="{{ route('wishlist.store') }}" method="post">
                 @csrf
                 <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
