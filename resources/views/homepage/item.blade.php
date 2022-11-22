@@ -104,6 +104,44 @@
                 </div>
               </div>
             </div>
+
+            <div class="mx-1 col">
+              <div class=" card mb-4 border border-0">
+                <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}">
+                  @if($kategori->foto != null)
+                  <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+                  @else
+                  <img src="{{ asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+                  @endif
+                </a>
+                <div class="card-body title-home3 row">
+                        <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
+                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center text-decoration-none">
+                                <h6 class="card-text m-2" style="color: #FAEDCD;">{{ $kategori->nama_kategori }}</h6>
+                              </a>
+                        </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mx-1 col">
+              <div class=" card mb-4 border border-0">
+                <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}">
+                  @if($kategori->foto != null)
+                  <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+                  @else
+                  <img src="{{ asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+                  @endif
+                </a>
+                <div class="card-body title-home3 row">
+                        <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
+                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center text-decoration-none">
+                                <h6 class="card-text m-2" style="color: #FAEDCD;">{{ $kategori->nama_kategori }}</h6>
+                              </a>
+                        </button>
+                </div>
+              </div>
+            </div>
             @endforeach
         </div>
       </div>
@@ -119,7 +157,7 @@
 </div>
 <div class="title-home1 ">
     <div class="row">
-        <img src="{{ asset('images/bag.jpg') }}" alt="" class="col-12 mb-4" style="">
+        <img src="{{ asset('images/bag.jpg') }}" alt="" class="col-12 mb-4">
     </div>
     <div class="mt-4">
         <h3 class="text-white text-center">Promo</h3>

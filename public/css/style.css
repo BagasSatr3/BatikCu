@@ -103,10 +103,7 @@ nav{
 }
 
 /* CSS LOGIN */
-.bg-auth {
-  background: #5f1a1f;
-  color: #fff;
-}
+
 
 
 /* .form-input, .form-input:focus  {
@@ -259,7 +256,7 @@ a.text-shop {
   font-size: 16pt;
 }
 
-input.reg, input.reg::placeholder {
+input.reg, input.reg::placeholder, input.reg:focus {
   background: #414B3B;
   color: #DDA15E;
   border-radius: 30px;
@@ -323,3 +320,50 @@ input.login::placeholder {
     font-weight: 500;
     background: none;
 }
+
+.btn-search{
+  border: 2px solid white;
+  background: white;
+  border-radius: 90px;
+  color: #414B3B;
+  width: 3rem;
+}
+
+
+input.search-data {
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.title-home4 {
+  background: #FAEDCD;
+   height: auto;
+   border-radius: 40px;
+}
+
+.title-home5 {
+  background: #CCD5AE;
+   height: auto;
+   border-radius: 40px;
+}
+
+.profil-user {
+ font-weight: bold;
+ color: #3d413a;
+ font-size: 20pt;
+}
+
+.font-profil {
+ font-weight: bold;
+ color: #DDA15E;
+ font-size: 20pt;
+}
+
+.bg-auth {
+  background: #CCD5AE;
+ 
+}
+
+
