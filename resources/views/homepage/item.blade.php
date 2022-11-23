@@ -70,10 +70,7 @@
                     </div>
                     </center>
             </div> --}}
-            <img src="/images/logoPutih.png" height="500px" class=""/>
-            <div class="mt-4">
-                <h3 class="text-white text-bold">BATIK CULTURE - Sharing the Batik of your life</h3>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -81,7 +78,7 @@
 <div class="title-home3">
     <br>
     <div class="mb-4">
-        <h2 class="text-center" style="color: #414B3B">Kategori Produk</h2>
+        <h2 class="text-center" style="color: #414B3B"><strong> Kategori Produk </strong></h2>
       </div>
       <div class="container">
         <div class="row mt-4 ">
@@ -105,43 +102,7 @@
               </div>
             </div>
 
-            <div class="mx-1 col">
-              <div class=" card mb-4 border border-0">
-                <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}">
-                  @if($kategori->foto != null)
-                  <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @else
-                  <img src="{{ asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @endif
-                </a>
-                <div class="card-body title-home3 row">
-                        <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
-                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center text-decoration-none">
-                                <h6 class="card-text m-2" style="color: #FAEDCD;">{{ $kategori->nama_kategori }}</h6>
-                              </a>
-                        </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="mx-1 col">
-              <div class=" card mb-4 border border-0">
-                <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}">
-                  @if($kategori->foto != null)
-                  <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @else
-                  <img src="{{ asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @endif
-                </a>
-                <div class="card-body title-home3 row">
-                        <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
-                            <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}" class="text-center text-decoration-none">
-                                <h6 class="card-text m-2" style="color: #FAEDCD;">{{ $kategori->nama_kategori }}</h6>
-                              </a>
-                        </button>
-                </div>
-              </div>
-            </div>
+        
             @endforeach
         </div>
       </div>
@@ -150,17 +111,17 @@
     <div class="row">
         <div class="container">
             <div class="col text-center mt-5 mb-5">
-                <h3 class="text-home2">Let’s make a miracle in every batik stroke.</h3>
+                <h3 class="text-home2"><strong> Let’s make a miracle in every batik stroke. </strong></h3>
             </div>
         </div>
     </div>
 </div>
 <div class="title-home1 ">
     <div class="row">
-        <img src="{{ asset('images/bag.jpg') }}" alt="" class="col-12 mb-4">
+        <img src="{{ asset('images/EVENT.png') }}" alt="" class="col-12 mb-4">
     </div>
     <div class="mt-4">
-        <h3 class="text-white text-center">Promo</h3>
+        <h3 class="text-white text-center"><strong> Promo </strong></h3>
     </div>
     <div class="container ">
         <div class="col mt-2 mb-2">

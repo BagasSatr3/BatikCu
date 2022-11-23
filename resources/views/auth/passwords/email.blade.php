@@ -9,13 +9,13 @@
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card text-white" style="border-radius: 1rem; background:#DDA15E;">
+                    <div class="card text-white" style="border-radius: 1rem; background:#3F4B3B;">
                         <div class="card-body p-5 text-center">
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <div class="d-flex flex-column align-items-center">
                                     <h1>Reset Password</h1>
-                                    <div class="text-center" >Yahaha lupa password!!!</div>
+                                    <div class="text-center" >Masukkan Password Barumu!!!</div>
                     
                                 </div>
                                 <form method="POST" action="{{ route('password.email') }}" class="form-reset">

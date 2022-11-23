@@ -28,7 +28,7 @@
                     <h5 class="text-home2 m-6">Batik merupakan salah satu seni budaya yang telah diakui dunia sebagai warisan kemanusiaan untuk budaya lisan dan non-bendawi oleh UNESCO sejak Oktober tahun 2009. Di Indonesia batik sudah ada sejak zaman Majapahit dan sangat populer pada abad setelahnya.Oleh karena itu, batik merupakan salah satu warisan seni budaya yang patut dilestarikan dan dikembangkan.</h5>
                 </div>
                 <div class="mt-4">
-                   <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
+                   <img src="{{ url("images/batik 1.jpg") }}" alt="" class="img-fluid mx-auto rounded">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col">
                 <div class="mt-4">
-                    <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
+                    <img src="{{ url("images/batik 4.jpeg") }}" alt="" class="img-fluid mx-auto rounded">
                     <center>
                         <button type="button" class="btn-shop rounded-pill border border-0 mt-4">
                             <a href="/item" class="text-shop text-decoration-none">
@@ -108,7 +108,7 @@
                 <h3 class="mt-4" style="color: #414B3B;"><strong> Our Team </strong></h3>
                 <div class="row row-cols-3 mt-3">
                     <div class="col">
-                        <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
+                        <img src="{{ url("images/bagas.jpeg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
                             <h2 style="color: #414B3B;">Bagas Satria Jiwandana</h2>
                         </div>
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
+                        <img src="{{ url("images/shinta.jpg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
                             <h2 style="color: #414B3B;">Shinta Aishnabila</h2>
                         </div>
@@ -131,7 +131,7 @@
                             <h4 style="color: #DDA15E;">Digital Marketer</h4>
                         </div>
                     </div><div class="col">
-                        <img src="{{ url("images/bag.jpg") }}" alt="" class="img-fluid mx-auto rounded">
+                        <img src="{{ url("images/ezar.jpg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
                             <h2 style="color: #414B3B;">Ezar Rajis Aumali</h2>
                         </div>
@@ -151,7 +151,7 @@
     <div class="row">
         <div class="container">
             <div class="col text-center mt-5 mb-4">
-                <h3 class="" id="contact" style="color: #FAEDCD">Contact Us</h3>
+                <h3 class="" id="contact" style="color: #FAEDCD"><strong> Contact Us </strong></h3>
             </div>
             <div class="row">
                 <div class="col text-right ">
