@@ -216,8 +216,9 @@ height: 270px;
 }
 
 .title-home3 {
-    background: #CCD5AE;
+    background: #CCD5AE !important;
      height: auto;
+     padding: 16px;
 }
 
 .text-home2 {
@@ -378,4 +379,19 @@ input.search-data {
 
 .bg-rex {
   background: #DDA15E;
+}
+
+.pro-head {
+  color: #DDA15E;
+}
+
+.pro-head2 {
+ color: #414B3B;
+ font-weight: bold;
+ font-size: 22pt;
+}
+
+.btn-cart {
+  color: #DDA15E;
+font-size: 10pt !important; 
 }

@@ -86,11 +86,7 @@
             <div class="mx-1 col">
               <div class=" card mb-4 border border-0">
                 <a href="{{ URL::to('item/kategori/'.$kategori->slug_kategori) }}">
-                  @if($kategori->foto != null)
-                  <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @else
-                  <img src="{{ asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
-                  @endif
+                  
                 </a>
                 <div class="card-body title-home3 row">
                         <button type="button" class="text-home2-button rounded-pill border border-0 mt-4">
@@ -125,10 +121,10 @@
     </div>
     <div class="container ">
         <div class="col mt-2 mb-2">
-            <div class="row title-home3 rounded">
+            <div class="row rounded">
                 @foreach($itempromo as $promo)
               <div class="col-md-4">
-                <div class="card mb-4 mt-4 rounded border border-0 ">
+                <div class="card mb-4 mt-4 rounded border border-0 title-home3">
                     <a href="{{ URL::to('item/produk/'.$promo->produk->slug_produk) }}">
                         @if($promo->produk->foto != null)
                         <img src="{{\Storage::url($promo->produk->foto) }}" alt="{{ $promo->produk->nama_produk }}" class="card-img title-home3">
@@ -136,7 +132,7 @@
                         <img src="{{asset('images/bag.jpg') }}" alt="{{ $promo->produk->nama_produk }}" class="card-img title-home3">
                         @endif
                       </a>
-                  <div class="card-body title-home3 rounded">
+                  <div class="card-body rounded">
                     <a href="{{ URL::to('item/produk/'.$promo->produk->slug_produk) }}" class="text-decoration-none" style="color: #414B3B">
                         <h5 class="card-text">
                           {{ $promo->produk->nama_produk }}

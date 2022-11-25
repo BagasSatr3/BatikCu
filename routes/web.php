@@ -79,6 +79,6 @@ Route::get('/home', function() {
 Route::get('/user', function() {
     return redirect('/user/profile');
 });
-Route::get('/item/kategori', function() {
-    return redirect('/item');
-});
+// Route::get('/item/kategori', function() {
+//     return redirect('/item');
+// });
