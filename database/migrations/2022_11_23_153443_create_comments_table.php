@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('review', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('title');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id')->unsigned();
             $table->integer('produk_id')->unsigned();
-            $table->text('deskripsi_review');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('produk_id')->references('id')->on('produk');
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->integer('rating');
+            $table->text('body');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review');
+        Schema::dropIfExists('comments');
     }
 };

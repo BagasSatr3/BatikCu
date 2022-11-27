@@ -40,6 +40,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::delete('produkimage/{id}',[\App\Http\Controllers\ProdukController::class,'deleteimage']);
     Route::resource('slideshow',\App\Http\Controllers\SlideshowController::class);
     Route::resource('promo',\App\Http\Controllers\ProdukPromoController::class);
+    Route::resource('about',\App\Http\Controllers\AboutController::class);
+    Route::resource('contact',\App\Http\Controllers\ContactController::class);
     Route::get('loadprodukasync/{id}',[\App\Http\Controllers\ProdukController::class,'loadasync']);
 });
 
@@ -50,6 +52,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
     Route::get('checkout',[\App\Http\Controllers\CartController::class,'checkout']);
     Route::resource('transaksiu',\App\Http\Controllers\TransaksiuController::class);
+    Route::post('comments', [\App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 });
 
 Route::group(['prefix' => 'item'], function() {

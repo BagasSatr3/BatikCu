@@ -102,9 +102,16 @@
             <div class="col text-center mt-5 mb-4">
                 <img src="/images/logohitam.svg" height="img-fluid" class=""/>
                 <h3 class="mt-4" style="color: #414B3B;"><strong> About Us </strong></h3>
-                <div class="mt-4">
-                    <h5 class="text-home2 m-6">Kisah kami bermula ditahun 2022. Kami adalah perusahaan produsen pertama kain batik di Indonesia. Kami menawarkan berbagai kreasi ekslusive batik nusantara mulai dari pakaian, kain, hingga makanan bertema batik. Misi kami yaitu “ hanya yang terbaik untuk pelanggan.”</h5>
+                @foreach ($itemabout as $about)
+                <div class="mt-4 card">
+                    <div class="card-title">
+                        <h4 class="m-6 mt-2">{{ $about->header }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="text-home2 m-6">{{ $about->body }}</h5>
+                    </div>
                 </div>
+                @endforeach
                 <h3 class="mt-4" style="color: #414B3B;"><strong> Our Team </strong></h3>
                 <div class="row row-cols-3 mt-3">
                     <div class="col">
@@ -156,12 +163,12 @@
             <div class="row">
                 <div class="col text-right ">
                     <h3 class="mt-4" style="color: #FAEDCD">Email :</h3>
-
                 </div>
+                @foreach ($itemcontact as $contact)
                 <div class="col text-left ">
                     <button class="title-home2 mt-4 border-0 rounded-pill">
                         <a href="mailto:sehatkuy.web@gmail.com" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
-                            <h3 class="" style="color: #DDA15E">batikcu@gmail.com</h3>
+                            <h3 class="" style="color: #DDA15E">{{ $contact->email }}</h3>
                         </a>
                     </button>
                 </div>
@@ -173,7 +180,7 @@
                 <div class="col text-left ">
                     <button class="title-home2 mt-4 border-0 rounded-pill">
                         <a href="https://wa.me/+6289697132466" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
-                            <h3 class="" style="color: #DDA15E">0896-9713-2466</h3>
+                            <h3 class="" style="color: #DDA15E">{{ $contact->nomor }}</h3>
                         </a>
                     </button>
                 </div>
@@ -185,13 +192,14 @@
                 <div class="col text-left ">
                     <button class="title-home2 mt-4 border-0 rounded-pill">
                         <a href="https://maps.app.goo.gl/Q4dnb1Rz4QQm4be68" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
-                           <h3 class="" style="color: #DDA15E">Jl. Teluk Pacitan, Malang. Jawa Timur.</h3>
+                           <h3 class="" style="color: #DDA15E">{{ $contact->alamat }}</h3>
                         </a>
                     </button>
                 </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

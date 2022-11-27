@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\AlamatPengiriman;
 use App\Models\Order;
+use App\Models\Produk;
 
 class TransaksiController extends Controller
 {

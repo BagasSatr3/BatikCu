@@ -62,8 +62,11 @@
               @else
               <p>
                 Rp. {{ number_format($itemproduk->harga, 2) }}
-              </p>
-              @endif
+            </p>
+            @endif
+            <p>
+               Stok {{ $itemproduk->qty, 2 }}
+            </p>
               <div class="card-header card-red" style="background-color: #3F4B3B;">
           Deskripsi
         </div>
@@ -107,4 +110,19 @@
     </div>
   </div>
 </div>
+
+<!-- DisplayComment -->
+{{-- <div class="row mt-4">
+    <div class="col">
+      <div class="card" style="border-color:#ADC178;">
+        <div class="card-header" style="border:none; background-color: #ADC178;">
+          <h5>Display Comment</h5>
+        </div>
+        <div class="card-body">
+        @include('homepage.comment', ['comments' => $itemproduk->comments, 'produk_id' => $itemproduk->id])
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
 @endsection

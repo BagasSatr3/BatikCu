@@ -9,6 +9,8 @@ use App\Models\Slideshow;
 use App\Models\ProdukPromo;
 use App\Models\Wishlist;
 use App\Models\Order;
+use App\Models\About;
+use App\Models\Contact;
 use Auth;
 
 class HomepageController extends Controller
@@ -18,11 +20,15 @@ class HomepageController extends Controller
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(6)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
         $itemslide = Slideshow::get();
+        $itemcontact = Contact::get();
+        $itemabout = About::get();
         $data = array('title' => 'Homepage',
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
             'itemslide' => $itemslide,
+            'itemcontact' => $itemcontact,
+            'itemabout' => $itemabout,
         );
         return view('homepage.index', $data);
     }
