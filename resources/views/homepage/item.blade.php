@@ -6,32 +6,30 @@
         <div class="col text-center mt-5 mb-4">
             <div class="row">
                 <div class="col">
-                  <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                      @foreach($itemslide as $index => $slide )
-                      @if($index == 0)
-                      <div class="carousel-item active">
-                          <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ $slide->caption_title }}</h5>
-                            <p>{{ $slide->caption_content }}</p>
-                          </div>
-
-                      </div>
-
-                      @endif
-
-                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                      @endforeach
-                    </div>
-                  </div>
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          @foreach($itemslide as $index => $slide )
+          @if($index == 0)
+          <div class="carousel-item active">
+              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+          </div>
+          @else
+          <div class="carousel-item">
+              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
+          </div>
+          @endif
+          @endforeach
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
                 </div>
               </div>
             {{-- <div class="mt-4 ">

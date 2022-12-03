@@ -51,13 +51,13 @@
                       <p>{{ $message }}</p>
                   </div>
               @endif
-              <span class="small">{{ $itemproduk->kategori->nama_kategori }}</span>
-              <h5>{{ $itemproduk->nama_produk }}</h5>
+              <span class="small pro-head"><strong> {{ $itemproduk->kategori->nama_kategori }} </strong></span>
+              <h5 class="pro-head2"> <strong> {{ $itemproduk->nama_produk }} </strong></h5>
               @if($itemproduk->promo != null)
               <p>
-                Rp. <del>{{ number_format($itemproduk->promo->harga_awal, 2) }}</del>
+               Price Rp. <del>{{ number_format($itemproduk->promo->harga_awal, 2) }}</del>
                 <br />
-                Rp. {{ number_format($itemproduk->promo->harga_akhir, 2) }}
+                Now! Rp. {{ number_format($itemproduk->promo->harga_akhir, 2) }}
               </p>
               @else
               <p>
@@ -75,16 +75,36 @@
         </div>
               <!-- cek apakah ada promo -->
 
+
+
               <form action="{{ route('wishlist.store') }}" method="post">
                 @csrf
                 <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
-                <button type="submit" class="btn btn-sm btn-outline-secondary" style="background-color: #3F4B3B;font-family: Poppins;">
+                <!-- <button type="submit" class="btn btn-sm btn-outline-secondary" style="background-color: #3F4B3B;font-family: Poppins;">
                 @if(isset($itemwishlist) && $itemwishlist)
                 <i class="fas fa-heart"></i> Tambah ke wishlist
                 @else
                 <i class="far fa-heart"></i> Tambah ke wishlist
                 @endif
-                </button>
+                </button> -->
+
+                <div class="row">
+  <div class="col"><button type="submit" class="btn btn-sm btn-outline-secondary btn-block p-3" style="background-color: #3F4B3B;font-family: Poppins;">
+                @if(isset($itemwishlist) && $itemwishlist)
+                <i class="fas fa-heart"></i> Tambah ke wishlist
+                @else
+                <i class="far fa-heart"></i> Tambah ke wishlist
+                @endif
+                </button></div>
+  <div class="col"><button class="btn btn-block btn-primary btn-cart" type="submit"style="background-color: #606C38; font-family: Poppins; ">
+              <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
+              </button></div>
+  <div class="w-100"></div>
+
+  
+</div>
+
+                <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
               </form>
             </div>
           </div>
@@ -96,7 +116,7 @@
         <div class="col">
           <div class="card">
             <div class="card-body card-yellow" style="background-color: #FAEDCD;">
-            <form action="{{ route('cartdetail.store') }}" method="POST">
+            <form action="{{ route('cartdetail.store') }}" method="POST"> -->
               @csrf
               <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
               <button class="btn btn-block btn-primary" type="submit"style="background-color: #606C38; font-family: Poppins;">

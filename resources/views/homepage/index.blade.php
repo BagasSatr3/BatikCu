@@ -101,23 +101,31 @@
         <div class="container">
             <div class="col text-center mt-5 mb-4">
                 <img src="/images/logohitam.svg" height="img-fluid" class=""/>
-                <h3 class="mt-4" style="color: #414B3B;"><strong> About Us </strong></h3>
+                <h1 class="mt-4" style="color: #414B3B;"><strong> About Us </strong></h1>
                 @foreach ($itemabout as $about)
-                <div class="mt-4 card">
+                <div class="mt-4 card title-home3">
                     <div class="card-title">
-                        <h4 class="m-6 mt-2">{{ $about->header }}</h4>
+                        <h4 class="m-6 mt-2">
+                            <strong>
+                            {{ $about->header }}
+                            </strong>
+                        </h4>
                     </div>
                     <div class="card-body">
-                        <h5 class="text-home2 m-6">{{ $about->body }}</h5>
+                        <h5 class="text-home2 m-6" style="color: #414B3B;">{{ $about->body }}</h5>
                     </div>
                 </div>
                 @endforeach
-                <h3 class="mt-4" style="color: #414B3B;"><strong> Our Team </strong></h3>
+                <h1 class="mt-4" style="color: #414B3B;"><strong> Our Team </strong></h1>
                 <div class="row row-cols-3 mt-3">
                     <div class="col">
                         <img src="{{ url("images/bagas.jpeg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
-                            <h2 style="color: #414B3B;">Bagas Satria Jiwandana</h2>
+                            <h2 style="color: #414B3B;">
+                        <strong>
+                        Bagas Satria Jiwandana
+                        </strong>
+                            </h2>
                         </div>
                         <div class="mt-2">
                             <h4 style="color: #DDA15E;">Frontend Developer</h4>
@@ -129,7 +137,11 @@
                     <div class="col">
                         <img src="{{ url("images/shinta.jpg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
-                            <h2 style="color: #414B3B;">Shinta Aishnabila</h2>
+                            <h2 style="color: #414B3B;">
+                                <strong>
+                                Shinta Aishnabila
+                                </strong>
+                            </h2>
                         </div>
                         <div class="mt-2">
                             <h4 style="color: #DDA15E;"> UI Design</h4>
@@ -140,7 +152,11 @@
                     </div><div class="col">
                         <img src="{{ url("images/ezar.jpg") }}" alt="" style="width:300px; height:300px;" class="img-fluid mx-auto rounded">
                         <div class="mt-2">
-                            <h2 style="color: #414B3B;">Ezar Rajis Aumali</h2>
+                            <h2 style="color: #414B3B;">
+                                <strong>
+                                Ezar Rajis Aumali
+                                </strong>
+                            </h2>
                         </div>
                         <div class="mt-2">
                             <h4 style="color: #DDA15E;">Content Writer</h4>
@@ -158,7 +174,7 @@
     <div class="row">
         <div class="container">
             <div class="col text-center mt-5 mb-4">
-                <h3 class="" id="contact" style="color: #FAEDCD"><strong> Contact Us </strong></h3>
+                <h1 class="" id="contact" style="color: #FAEDCD"><strong> Contact Us </strong></h1>
             </div>
             <div class="row">
                 <div class="col text-right ">

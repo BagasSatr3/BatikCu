@@ -65,7 +65,9 @@
             <div class="card mb-4 shadow-sm ">
               <a href="{{ URL::to('item/produk/'.$produk->slug_produk) }}">
                 @if($produk->foto != null)
-                <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_produk }}" class="img-fluid img-thumbnail">
+                <center>
+                  <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_produk }}" class="img-fluid img-thumbnail" style="max-width: 230px; max-height:230px">
+                </center>
                 @else
                 <img src="{{ asset('images/bag.jpg') }}" alt="{{ $produk->nama_produk }}" class="img-fluid img-thumbnail">
                 @endif
